@@ -18,5 +18,10 @@ namespace Yaw.Navigation
         {
             SceneManager.LoadScene(sceneName);
         }
+
+        public void QuitApplication()
+        {
+            Application.Quit();
+        }
     }
 }
