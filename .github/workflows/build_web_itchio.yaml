@@ -1,0 +1,65 @@
+name: Build Web Deploy Itchio 🎮
+
+on:
+  workflow_dispatch:
+  push: 
+    branches:
+      - "main"
+jobs:
+  build:
+    name: Build for Web 🌐
+    runs-on: ubuntu-latest
+    outputs:
+      buildVersion: ${{ steps.buildStep.outputs.buildVersion }}
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      - name: Replace Local repo with remote - manifest.json
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          include: Packages/manifest.json
+          find: 'file:D:/Repositories/Gabler Games/Core Packages/Assets/(.*?)'
+          replace: 'https://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@github.com/vgabler/core.git?path=/Assets/$1'
+
+      - name: Replace Local repo with remote - packages-lock.json
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          include: Packages/packages-lock.json
+          find: '(?s)"file:D:/Repositories/Gabler Games/Core Packages/Assets/(.*?)",(.*?)"source": "local",'
+          replace: '"https://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@github.com/vgabler/core.git?path=/Assets/$1",$2"source": "git",'
+
+      # Build
+      - name: Build project
+        uses: game-ci/unity-builder@v2
+        id: buildStep
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: WebGL
+          allowDirtyBuild: true
+
+      - run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+        shell: bash
+
+      # Upload
+      - name: Upload to Itch.io
+        uses: vgabler/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: web
+          ITCH_GAME: ${{ env.REPOSITORY_NAME }}
+          ITCH_USER: gablergames
+          PACKAGE: build
+          VERSION: ${{ steps.buildStep.outputs.buildVersion  }}
