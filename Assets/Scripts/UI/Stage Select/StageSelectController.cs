@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Yaw.Data;
+using Yaw.Game;
 
 namespace Yaw.StageSelect
 {
@@ -9,17 +10,22 @@ namespace Yaw.StageSelect
     /// </summary>
     public class StageSelectController : MonoBehaviour
     {
+        //Campos para atribuir pelo inspector
         public StageSelectEntry prefab;
         public Transform entriesContainer;
 
+        //Dependências
         IDataProvider<StageData> dataProvider;
+        IGameStateController gameController;
 
+        //Campos
         List<StageSelectEntry> entries = new List<StageSelectEntry>();
 
-        //TODO melhor ser reativo
         private void Start()
         {
             dataProvider = ServiceLocator.Get<IDataProvider<StageData>>();
+            gameController = ServiceLocator.Get<IGameStateController>();
+
             UpdateData();
         }
 
@@ -28,6 +34,7 @@ namespace Yaw.StageSelect
         /// </summary>
         void UpdateData()
         {
+            //TODO seria melhor reativo
             var stages = dataProvider.GetAll();
             for (int i = 0; i < stages.Count; i++)
             {
@@ -66,14 +73,13 @@ namespace Yaw.StageSelect
             return entry;
         }
 
-
         /// <summary>
         /// Evento chamado pelas entries, quando selecionadas
         /// </summary>
         private void OnPicked(StageData obj)
         {
-            //TODO levar para a cena
             Debug.Log("Entrando na fase!");
+            gameController.StartGame(obj);
         }
 
         private void OnDestroy()
