@@ -26,20 +26,6 @@ jobs:
           restore-keys: |
             Library-
 
-      - name: Replace Local repo with remote - manifest.json
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          include: Packages/manifest.json
-          find: 'file:D:/Repositories/Gabler Games/Core Packages/Assets/(.*?)'
-          replace: 'https://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@github.com/vgabler/core.git?path=/Assets/$1'
-
-      - name: Replace Local repo with remote - packages-lock.json
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          include: Packages/packages-lock.json
-          find: '(?s)"file:D:/Repositories/Gabler Games/Core Packages/Assets/(.*?)",(.*?)"source": "local",'
-          replace: '"https://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@github.com/vgabler/core.git?path=/Assets/$1",$2"source": "git",'
-
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v2
