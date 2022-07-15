@@ -20,7 +20,6 @@ namespace Yaw.Utils
         public event Action<String> OnAnimationGenericEvent;
         public event Action OnAnimationFinishedEvent;
 
-
         public void AnimationFinished()
         {
             OnAnimationFinishedEvent?.Invoke();

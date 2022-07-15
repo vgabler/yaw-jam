@@ -48,7 +48,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Body/Shoulder R
+    path: Body/Sprite/Shoulder R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -82,7 +82,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Body/Head
+    path: Body/Sprite/Head
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -116,7 +116,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Body/Shoulder L
+    path: Body/Sprite/Shoulder L
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -151,7 +151,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Visuals/Body
+    path: Body/Sprite
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -245,7 +245,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Visuals/Body/Shoulder R
+    path: Body/Sprite/Shoulder R
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -282,7 +282,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Visuals/Body/Shoulder R
+    path: Body/Sprite/Shoulder R
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -319,7 +319,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Visuals/Body/Shoulder R
+    path: Body/Sprite/Shoulder R
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -356,7 +356,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Visuals/Body/Head
+    path: Body/Sprite/Head
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -393,7 +393,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Visuals/Body/Head
+    path: Body/Sprite/Head
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -430,7 +430,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Visuals/Body/Head
+    path: Body/Sprite/Head
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -467,7 +467,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Visuals/Body/Shoulder L
+    path: Body/Sprite/Shoulder L
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -504,7 +504,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Visuals/Body/Shoulder L
+    path: Body/Sprite/Shoulder L
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -541,7 +541,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Visuals/Body/Shoulder L
+    path: Body/Sprite/Shoulder L
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -578,7 +578,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Visuals/Body
+    path: Body/Sprite
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -615,7 +615,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Visuals/Body
+    path: Body/Sprite
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -652,7 +652,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Visuals/Body
+    path: Body/Sprite
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []

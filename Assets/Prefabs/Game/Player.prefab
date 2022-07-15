@@ -75,10 +75,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    Health: 5
+    Health: 10
     Attack: 2
     Speed: 1
-    team: 0
+    Team: 0
   prefab: {fileID: 173558136622029380, guid: 0a6e9b06f6fc4fe4383cf4db75fa945d, type: 3}
   summonLocation: {fileID: 4003484868930147051}
 --- !u!1 &5145012691405512389

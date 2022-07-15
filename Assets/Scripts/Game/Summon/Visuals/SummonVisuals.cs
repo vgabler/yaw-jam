@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Yaw.Data;
 
@@ -11,7 +9,7 @@ namespace Yaw.Game
     /// </summary>
     public class SummonVisuals : MonoBehaviour
     {
-        public Transform visualsParent;
+        public Transform body;
         ISingleDataProvider<SummonData> provider;
 
         //TODO dependency injection
@@ -24,9 +22,9 @@ namespace Yaw.Game
             //Inverte a direção do personagem
             if (!data.IsFromLeft)
             {
-                var scale = visualsParent.localScale;
+                var scale = body.localScale;
                 scale.x *= -1;
-                visualsParent.localScale = scale;
+                body.localScale = scale;
             }
         }
     }
