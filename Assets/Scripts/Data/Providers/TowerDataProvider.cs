@@ -24,11 +24,10 @@ namespace Yaw.Data
         }
 
         /// <summary>
-        /// Altera a vida do summon
+        /// Altera a vida da torre
         /// </summary>
         public void DecreaseHealth(int damage)
         {
-            Debug.Log("Descreasing health by " + damage);
             var d = Data;
             d.Health -= damage;
             Data = d;
