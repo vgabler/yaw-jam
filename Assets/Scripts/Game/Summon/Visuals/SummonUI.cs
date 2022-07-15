@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Yaw.Data;
 
 namespace Yaw.Game
 {
+    /// <summary>
+    /// Atualiza as informações UI do summon
+    /// Usado tanto para as cartas quanto para os summons ingame
+    /// </summary>
     public class SummonUI : MonoBehaviour
     {
         public Text healthText;
@@ -18,10 +20,10 @@ namespace Yaw.Game
             provider = GetComponentInParent<ISingleDataProvider<SummonData>>();
         }
 
-        //TODO atualizar só quando houver alteração
+        //TODO reactive
         void Update()
         {
-            var data = provider.Get();
+            var data = provider.Data;
             healthText.text = data.Health.ToString();
             attackText.text = data.Attack.ToString();
         }

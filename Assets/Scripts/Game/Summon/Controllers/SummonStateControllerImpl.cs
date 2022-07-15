@@ -4,36 +4,34 @@ using Yaw.Data;
 
 namespace Yaw.Game
 {
-    public enum SummonState { Idle, Walking, Attacking, Dying, Dead }
-
     /// <summary>
     /// Gerencia o estado do Summon
     /// </summary>
-    public class Summon : MonoBehaviour, ISingleDataProvider<SummonData>
+    public class SummonStateControllerImpl : MonoBehaviour, ISummonStateController
     {
         public SummonState State { get; private set; }
 
-        [SerializeField]
-        SummonData data = new SummonData { Health = 5, Attack = 2, team = 0, Speed = 1 };
+        ISingleDataProvider<SummonData> dataProvider;
 
-        public SummonData Get() => data;
-
-        public void SetUp(SummonData data)
+        private void Start()
         {
-            this.data = data;
+            dataProvider = GetComponentInParent<ISingleDataProvider<SummonData>>();
             StartCoroutine(WaitThenGo());
         }
 
-        //TODO regras de mudança de estado
-        public void TryChangeState(SummonState state)
+        public bool TryChangeState(SummonState state)
         {
+            //TODO regras de mudança de estado
             State = state;
             switch (State)
             {
+                //Normalmente chamado pelo AnimatorController, significa que a animação de morte acabou
                 case SummonState.Dead:
                     Destroy(gameObject);
                     break;
             }
+
+            return true;
         }
 
         //TODO Somente para testes, remover
@@ -41,7 +39,7 @@ namespace Yaw.Game
         {
             yield return new WaitForSeconds(2);
             State = SummonState.Walking;
-            while (data.Health > 0)
+            while (dataProvider.Data.Health > 0)
             {
                 //Se estiver atacando, espera a animação acabar
                 if (State == SummonState.Attacking)
@@ -53,8 +51,11 @@ namespace Yaw.Game
                 {
                     yield return new WaitForSeconds(1);
                 }
-                State = data.Health % 2 != 0 ? SummonState.Attacking : SummonState.Walking;
-                data.Health--;
+                State = dataProvider.Data.Health % 2 != 0 ? SummonState.Attacking : SummonState.Walking;
+
+                var d = dataProvider.Data;
+                d.Health--;
+                dataProvider.Set(d);
             }
 
             State = SummonState.Dying;

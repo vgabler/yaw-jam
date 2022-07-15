@@ -1,21 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Yaw.Data
 {
-    public class SummonDataProvider : MonoBehaviour
+    /// <summary>
+    /// Gerencia os dados do summon
+    /// </summary>
+    public class SummonDataProvider : MonoBehaviour, ISingleDataProvider<SummonData>
     {
-        // Start is called before the first frame update
-        void Start()
+        public SummonData Data { get; set; }
+
+        public void Set(SummonData value)
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            Data = value;
         }
     }
 }

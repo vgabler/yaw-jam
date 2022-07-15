@@ -17,6 +17,8 @@ namespace Yaw.Data
     public interface ISingleDataProvider<T>
     {
         //TODO async. Melhor ainda, reactive
-        T Get();
+        T Data { get; }
+
+        void Set(T value);
     }
 }
