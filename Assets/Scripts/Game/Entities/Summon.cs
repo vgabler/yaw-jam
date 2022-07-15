@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
 using Yaw.Data;
-using Yaw.Utils;
 
 namespace Yaw.Game
 {
-    public enum SummonState { Idle, Walking, Attacking, Dying }
+    public enum SummonState { Idle, Walking, Attacking, Dying, Dead }
 
     /// <summary>
     /// Gerencia o estado do Summon
@@ -22,23 +21,16 @@ namespace Yaw.Game
         public void SetUp(SummonData data)
         {
             this.data = data;
-            GetComponent<AnimatorEvents>().OnAnimationFinishedEvent += OnAnimationFinished;
             StartCoroutine(WaitThenGo());
         }
 
-        private void OnDestroy()
+        //TODO regras de mudança de estado
+        public void TryChangeState(SummonState state)
         {
-            GetComponent<AnimatorEvents>().OnAnimationFinishedEvent -= OnAnimationFinished;
-        }
-
-        private void OnAnimationFinished()
-        {
+            State = state;
             switch (State)
             {
-                case SummonState.Attacking:
-                    State = SummonState.Walking;
-                    break;
-                case SummonState.Dying:
+                case SummonState.Dead:
                     Destroy(gameObject);
                     break;
             }
