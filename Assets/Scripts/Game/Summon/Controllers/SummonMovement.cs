@@ -19,7 +19,7 @@ namespace Yaw.Game
             stateController = GetComponentInParent<ISummonStateController>();
             provider = GetComponentInParent<ISingleDataProvider<SummonData>>();
             //TODO reactive
-            direction = provider.Data.team % 2 == 0 ? 1 : -1;
+            direction = provider.Data.IsFromLeft ? 1 : -1;
         }
 
         /// <summary>

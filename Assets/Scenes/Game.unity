@@ -2089,7 +2089,7 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3745304444997452661, guid: ce38eeb4b8286ec47a720d5c782a5fa8, type: 3}
-      propertyPath: data.team
+      propertyPath: data.Team
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8254815087854294105, guid: ce38eeb4b8286ec47a720d5c782a5fa8, type: 3}

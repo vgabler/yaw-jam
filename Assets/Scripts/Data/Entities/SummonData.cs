@@ -13,6 +13,7 @@ namespace Yaw.Data
         public int Health;
         public int Attack;
         public int Speed;
-        public int team;
+        public int Team;
+        public bool IsFromLeft => Team % 2 == 0;
     }
 }
