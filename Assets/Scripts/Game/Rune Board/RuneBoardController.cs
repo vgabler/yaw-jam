@@ -30,6 +30,7 @@ namespace Yaw.Game
 
             //Mostra as primeiras 3 cartas no container
             UpdateCardsUI(data.cards.Take(3).ToList());
+            UpdateRunesUI(data.runes);
         }
 
         void UpdateCardsUI(List<CardData> cards)
@@ -39,6 +40,16 @@ namespace Yaw.Game
                 var obj = Instantiate(cardPrefab, cardsContainer);
                 obj.SetUp(card);
             }
+        }
+
+        void UpdateRunesUI(List<RuneDefinition> runes)
+        {
+            foreach (var rune in runes)
+            {
+                var obj = Instantiate(runePerfab, runesContainer);
+                obj.SetUp(rune);
+            }
+
         }
     }
 }
