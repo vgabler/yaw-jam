@@ -1445,6 +1445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7781367823219359781}
   - component: {fileID: 8806970494664883053}
+  - component: {fileID: 5876572578118270149}
   m_Layer: 6
   m_Name: Combat
   m_TagString: Untagged
@@ -1485,5 +1486,23 @@ MonoBehaviour:
   attackOrigin: {fileID: 3112618204091760769}
   areaDamage: 1
   checkLayer:
+    serializedVersion: 2
+    m_Bits: 192
+--- !u!114 &5876572578118270149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091841735138523341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffe74b34bdc7f241aeeb0e1e79d6a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iAttacker: {fileID: 7091841735138523341}
+  iStateController: {fileID: 173558136622029380}
+  rayCastOrigin: {fileID: 3112618204091760769}
+  checkMask:
     serializedVersion: 2
     m_Bits: 192

@@ -13,6 +13,8 @@ namespace Yaw.Game
 
         ISingleDataProvider<SummonData> dataProvider;
 
+        bool waiting;
+
         private void Start()
         {
             dataProvider = GetComponentInParent<ISingleDataProvider<SummonData>>();
@@ -34,31 +36,40 @@ namespace Yaw.Game
             return true;
         }
 
-        //TODO Somente para testes, remover
-        IEnumerator WaitThenGo()
+        /// <summary>
+        /// Faz verificações para alterar o estado
+        /// </summary>
+        private void Update()
         {
-            yield return new WaitForSeconds(2);
-            State = SummonState.Walking;
-            while (dataProvider.Data.Health > 0)
+            switch (State)
             {
-                //Se estiver atacando, espera a animação acabar
-                if (State == SummonState.Attacking)
-                {
-                    yield return new WaitForEndOfFrame();
-                    continue;
-                }
-                else
-                {
-                    yield return new WaitForSeconds(1);
-                }
-                State = dataProvider.Data.Health % 2 != 0 ? SummonState.Attacking : SummonState.Walking;
-
-                var d = dataProvider.Data;
-                d.Health--;
-                dataProvider.Set(d);
+                case SummonState.Walking:
+                    break;
+                case SummonState.Idle:
+                    if (!waiting)
+                    {
+                        State = SummonState.Walking;
+                    }
+                    break;
+                default:
+                    return;
             }
 
-            State = SummonState.Dying;
+            //Se a vida chegar a zero, ativa o estado "dying"
+            if (dataProvider.Data.Health <= 0)
+            {
+                State = SummonState.Dying;
+            }
+        }
+
+        /// <summary>
+        /// Espera um pouco antes de sair andando
+        /// </summary>
+        IEnumerator WaitThenGo()
+        {
+            waiting = true;
+            yield return new WaitForSeconds(1);
+            waiting = false;
         }
     }
 }

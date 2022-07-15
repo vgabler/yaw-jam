@@ -16,8 +16,10 @@ namespace Yaw.Game
 
         public void TakeDamage(int damage, ITeamEntity attacker)
         {
+            Debug.Log("Taking damage");
             if (!allowFriendlyFire && attacker.Team == Team)
             {
+                Debug.Log("Ignored");
                 return;
             }
 
