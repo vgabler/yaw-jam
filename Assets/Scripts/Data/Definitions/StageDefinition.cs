@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Yaw.Data
@@ -9,5 +10,8 @@ namespace Yaw.Data
     public class StageDefinition : ScriptableObject
     {
         public string stageName;
+
+        [Tooltip("O indice da lista representa o time. 0 - player, 1 - cpu")]
+        public List<DeckDefinition> TeamDecks;
     }
 }

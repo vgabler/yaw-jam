@@ -666,9 +666,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8254815088519581836}
-  - component: {fileID: 2141089182142413062}
   - component: {fileID: 8771539090437829734}
+  - component: {fileID: 5335320609153884183}
+  - component: {fileID: 7701828675853473561}
   - component: {fileID: 1824009264387486975}
+  - component: {fileID: 2141089182142413062}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -692,6 +694,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8771539090437829734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254815088519581837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4290c804c16677c4aa6469289911f75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField:
+    Health: 100
+    Team: 0
+--- !u!114 &5335320609153884183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254815088519581837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df4824df2001fb46bc972799f9a5e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+--- !u!114 &7701828675853473561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254815088519581837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea52a1b907bcd40bf6e17a8597e3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  summoner: {fileID: 1824009264387486975}
+  iDataProviderDeck: {fileID: 8254815088519581837}
+--- !u!114 &1824009264387486975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254815088519581837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35bd3c5593dc90b4d90c709a391d400b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 173558136622029380, guid: 0a6e9b06f6fc4fe4383cf4db75fa945d, type: 3}
+  summonLocation: {fileID: 4003484868930147051}
 --- !u!114 &2141089182142413062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,35 +782,6 @@ MonoBehaviour:
   OnTakeDamageDetails:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8771539090437829734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8254815088519581837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4290c804c16677c4aa6469289911f75f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Data>k__BackingField:
-    Health: 100
-    Team: 0
---- !u!114 &1824009264387486975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8254815088519581837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35bd3c5593dc90b4d90c709a391d400b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 173558136622029380, guid: 0a6e9b06f6fc4fe4383cf4db75fa945d, type: 3}
-  summonLocation: {fileID: 4003484868930147051}
 --- !u!1 &8254815088593621168
 GameObject:
   m_ObjectHideFlags: 0

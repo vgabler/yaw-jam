@@ -6,43 +6,28 @@ using UnityEngine.UI;
 namespace Yaw.Game
 {
     /// <summary>
-    /// Controla o deck e a combinação de runas.
-    /// Valida a combinação feita e chama o summon.
+    /// Controla a combinação de runas.
     /// </summary>
     public class RuneBoardController : MonoBehaviour
     {
-        public RuneUI runePickablePrefab;
+        public RuneUI pickableRunePrefab;
 
-        //As cartas que podem ser escolhidas
-        public List<CardUI> activeCardsUI;
         public RectTransform runesContainer;
         public List<Button> runeSlots;
         RuneUI[] combination;
-
-        public Summonner summoner;
-        DeckData data;
-
-        int currentCardIndex;
-
         RuneUI currentRune;
 
-        List<CardData> activeCards;
-        List<CardData> usedCards;
-        List<CardData> deckCards;
+        public DeckController deckController;
+        public GameObject iDataProviderDeck;
 
+        /// <summary>
+        /// Busca as dependências, atualiza o UI e configura os slots
+        /// </summary>
         void Start()
         {
-            var dataProvider = GetComponentInParent<ISingleDataProvider<DeckData>>();
+            var dataProvider = iDataProviderDeck.GetComponent<ISingleDataProvider<DeckData>>();
 
-            data = dataProvider.Data;
-
-            //Atualiza as listas de carta
-            deckCards = new List<CardData>(data.cards);
-            activeCards = new List<CardData>();
-            usedCards = new List<CardData>();
-
-            UpdateActiveCards();
-            UpdateRunesUI(data.runes);
+            UpdateRunesUI(dataProvider.Data.runes);
 
             //Configura os slots da combinação
             foreach (var slot in runeSlots)
@@ -52,6 +37,25 @@ namespace Yaw.Game
             combination = new RuneUI[Constants.RUNE_SLOTS];
         }
 
+        /// <summary>
+        /// Chamado ao clicar no botão "summon"
+        /// </summary>
+        public void SummonClicked()
+        {
+            //Cria o array da combinação e tenta sumonar alguma carta
+            var c = new RuneDefinition[combination.Length];
+
+            for (int i = 0; i < c.Length; i++)
+            {
+                c[i] = combination[i]?.Rune;
+            }
+
+            deckController.TrySummon(c);
+        }
+
+        /// <summary>
+        /// Cria runas clicáveis de acordo com o necessário
+        /// </summary>
         void UpdateRunesUI(List<RuneDefinition> runes)
         {
             var toggleGroup = runesContainer.GetComponent<ToggleGroup>();
@@ -59,7 +63,7 @@ namespace Yaw.Game
             foreach (var rune in runes)
             {
                 //Cria a instância da runa
-                var obj = Instantiate(runePickablePrefab, runesContainer);
+                var obj = Instantiate(pickableRunePrefab, runesContainer);
                 obj.SetUp(rune);
                 //Adiciona listener do toggle
                 var toggle = obj.GetComponent<Toggle>();
@@ -134,82 +138,6 @@ namespace Yaw.Game
             //Deseleciona
             currentRune.GetComponent<Toggle>().SetIsOnWithoutNotify(false);
             currentRune = null;
-        }
-
-        void UpdateActiveCards()
-        {
-            //Se não tem cards ativos, e o deck zerou, embaralha e começa de novo
-            if (deckCards.Count <= 0 && activeCards.Count <= 0)
-            {
-                deckCards.AddRange(usedCards);
-                deckCards.Shuffle();
-                usedCards.Clear();
-            }
-
-            //Adiciona as 3 primeiras cartas às cartas ativas
-            while (activeCards.Count < 3 && deckCards.Count > 0)
-            {
-                var card = deckCards[0];
-                activeCards.Add(card);
-                deckCards.RemoveAt(0);
-            }
-
-            //Atualiza o UI
-            for (int i = 0; i < activeCardsUI.Count; i++)
-            {
-                //Se tiver carta ativa para esse indice, atualiza
-                if (i < activeCards.Count)
-                {
-                    activeCardsUI[i].gameObject.SetActive(true);
-                    activeCardsUI[i].SetUp(activeCards[i]);
-                }
-                //Se não, desabilita o card
-                else
-                {
-                    activeCardsUI[i].gameObject.SetActive(false);
-                }
-            }
-        }
-
-        public void TrySummon()
-        {
-            //Aciona as cards ativas prontas pro summon
-            for (int i = 0; i < activeCards.Count; i++)
-            {
-                var card = activeCards[i];
-
-                if (VerifyCombination(card))
-                {
-                    //Se a combinação estiver certa, faz o summon
-                    summoner.Summon(card.SummonData);
-                    //Remove da pilha ativa
-                    activeCards.RemoveAt(i);
-                    //Adiciona na pilha de descarte
-                    usedCards.Add(card);
-                    i--;
-                }
-            }
-
-            UpdateActiveCards();
-        }
-
-        public bool VerifyCombination(CardData card)
-        {
-            if (combination.Length != card.Combination.Length)
-            {
-                Debug.LogError("Combinações de tamanho diferente!");
-                return false;
-            }
-
-            for (int i = 0; i < card.Combination.Length; i++)
-            {
-                if (card.Combination[i] != combination[i]?.Rune)
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
     }
 }

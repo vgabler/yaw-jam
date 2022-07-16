@@ -36,6 +36,28 @@ namespace Yaw.Data
         }
 
         /// <summary>
+        /// Retorna verdadeiro se a combinação é a mesma dessa carta
+        /// </summary>
+        public bool VerifyCombination(RuneDefinition[] combination)
+        {
+            if (combination.Length != Combination.Length)
+            {
+                Debug.LogError("Combinações de tamanho diferente!");
+                return false;
+            }
+
+            for (int i = 0; i < Combination.Length; i++)
+            {
+                if (Combination[i] != combination[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Gera uma array de indices aleatórios dentro do range definido
         /// </summary>
         static int[] GetRandomIndexes(int limit, int range)
