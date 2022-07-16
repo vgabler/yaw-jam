@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beecc6b52912a304dba3caf1b5e2581b, type: 3}
+  m_Name: Big Advanced Golem
+  m_EditorClassIdentifier: 
+  SummonData:
+    Health: 15
+    Attack: 4
+    Speed: 3
+    Team: 0
+  Runes:
+  - {fileID: 11400000, guid: b41cc1c3e0aba6e43b4b849e86adecc2, type: 2}
+  - {fileID: 11400000, guid: 601b2f9286ece334d9f214262fdd1326, type: 2}
+  - {fileID: 11400000, guid: ab175c3ec8deca141a57ef78fc0400e6, type: 2}
+  - {fileID: 11400000, guid: 6817f334a456adb4087dfdd962523bc6, type: 2}
+  - {fileID: 11400000, guid: 09c48d51f5c6bd54dab914c3772a00b3, type: 2}
+  - {fileID: 11400000, guid: c4a9c3dbe6dc12b40a90e692c3a6c725, type: 2}
