@@ -78,7 +78,6 @@ namespace Yaw.StageSelect
         /// </summary>
         private void OnPicked(StageData obj)
         {
-            Debug.Log("Entrando na fase!");
             gameController.StartGame(obj);
         }
 

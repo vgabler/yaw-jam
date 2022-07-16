@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: Stage 1
   m_EditorClassIdentifier: 
   stageName: 1
+  TeamDecks:
+  - {fileID: 11400000, guid: 175bf47af1cd4954da32eef1381a7224, type: 2}
+  - {fileID: 11400000, guid: 175bf47af1cd4954da32eef1381a7224, type: 2}
+  AiSettings: {fileID: 11400000, guid: bf7c510216021bc4b8feb64caaf31622, type: 2}
