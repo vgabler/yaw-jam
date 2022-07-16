@@ -1137,6 +1137,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 1824009264387486975, guid: ce38eeb4b8286ec47a720d5c782a5fa8, type: 3}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2141089182142413062, guid: ce38eeb4b8286ec47a720d5c782a5fa8, type: 3}
       propertyPath: <Team>k__BackingField
       value: 1
@@ -1324,6 +1328,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8254815088519581836, guid: ce38eeb4b8286ec47a720d5c782a5fa8, type: 3}
   m_PrefabInstance: {fileID: 736717112}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &736717114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8254815088519581837, guid: ce38eeb4b8286ec47a720d5c782a5fa8, type: 3}
+  m_PrefabInstance: {fileID: 736717112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &736717115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7701828675853473561, guid: ce38eeb4b8286ec47a720d5c782a5fa8, type: 3}
+  m_PrefabInstance: {fileID: 736717112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736717114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea52a1b907bcd40bf6e17a8597e3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &736717116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736717114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa715cb2b0600ef45946aed345c34506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckController: {fileID: 736717115}
+  iDataProviderDeck: {fileID: 736717114}
 --- !u!1 &864002689
 GameObject:
   m_ObjectHideFlags: 0

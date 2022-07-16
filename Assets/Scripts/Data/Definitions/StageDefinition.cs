@@ -13,5 +13,8 @@ namespace Yaw.Data
 
         [Tooltip("O indice da lista representa o time. 0 - player, 1 - cpu")]
         public List<DeckDefinition> TeamDecks;
+
+        [Tooltip("Configurações da AI nessa fase")]
+        public AiSettings AiSettings;
     }
 }
