@@ -8,11 +8,10 @@ namespace Yaw.Game
     /// </summary>
     public class Summonner : MonoBehaviour
     {
-        public SummonData data;
         public GameObject prefab;
         public Transform summonLocation;
 
-        public void Summon()
+        public void Summon(SummonData data)
         {
             var obj = Instantiate(prefab, summonLocation.position, Quaternion.identity, transform);
 
