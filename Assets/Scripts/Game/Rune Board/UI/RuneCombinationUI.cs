@@ -10,27 +10,32 @@ namespace Yaw.Game
     /// </summary>
     public class RuneCombinationUI : MonoBehaviour
     {
-        public RuneUI runePrefab;
-        public List<RectTransform> slots;
+        public List<RuneUI> runes;
 
         /// <summary>
         /// Adiciona os UI de runas em cada slot de acordo com a combinação
         /// </summary>
         public void SetUp(RuneDefinition[] combination)
         {
-            if (combination.Length != slots.Count)
+            if (combination.Length != runes.Count)
             {
-                Debug.LogError($"Falha no combination ui! combination {combination.Length} !=  slots {slots.Count}");
+                Debug.LogError($"Falha no combination ui! combination {combination.Length} !=  slots {runes.Count}");
                 return;
             }
 
             for (int i = 0; i < combination.Length; i++)
             {
-                //Se houver runa no slot i, instancia o prefab
+                var rune = runes[i];
+                //Se houver runa na posição, ativa e setup
                 if (combination[i] != null)
                 {
-                    var rune = Instantiate(runePrefab, slots[i]);
+                    rune.gameObject.SetActive(true);
                     rune.SetUp(combination[i]);
+                }
+                //Se não, desativa a runa no slot
+                else
+                {
+                    rune.gameObject.SetActive(false);
                 }
             }
         }

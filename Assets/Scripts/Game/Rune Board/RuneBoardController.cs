@@ -1,10 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Yaw.Data;
-using System.Linq;
 using UnityEngine.UI;
-using System;
-using System.Collections;
 
 namespace Yaw.Game
 {
@@ -163,6 +160,7 @@ namespace Yaw.Game
                 //Se tiver carta ativa para esse indice, atualiza
                 if (i < activeCards.Count)
                 {
+                    activeCardsUI[i].gameObject.SetActive(true);
                     activeCardsUI[i].SetUp(activeCards[i]);
                 }
                 //Se não, desabilita o card

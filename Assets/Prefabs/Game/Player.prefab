@@ -144,7 +144,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 2.5}
+  m_Offset: {x: 0, y: 2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -155,7 +155,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 5}
+  m_Size: {x: 2, y: 4}
   m_EdgeRadius: 0
 --- !u!1 &5145012691405512389
 GameObject:
@@ -223,9 +223,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 3.75}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 100}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!223 &8037676835808330311
 Canvas:
   m_ObjectHideFlags: 0
@@ -751,11 +751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bd3c5593dc90b4d90c709a391d400b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data:
-    Health: 10
-    Attack: 2
-    Speed: 1
-    Team: 0
   prefab: {fileID: 173558136622029380, guid: 0a6e9b06f6fc4fe4383cf4db75fa945d, type: 3}
   summonLocation: {fileID: 4003484868930147051}
 --- !u!1 &8254815088593621168
@@ -865,8 +860,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8254815088978605617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 2, y: 5, z: 1}
+  m_LocalPosition: {x: 0, y: 1.9931, z: 0}
+  m_LocalScale: {x: 2, y: 3.9861047, z: 1}
   m_Children:
   - {fileID: 8254815087975956027}
   - {fileID: 8254815088298973350}
