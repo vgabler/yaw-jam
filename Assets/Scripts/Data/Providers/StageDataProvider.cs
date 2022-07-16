@@ -29,7 +29,7 @@ namespace Yaw.Data
                 {
                     Definition = def,
                     Locked = false,
-                    Completed = Random.Range(0, 100) >= 50, //TODO só pra testar
+                    Completed = false,
                 });
             }
 

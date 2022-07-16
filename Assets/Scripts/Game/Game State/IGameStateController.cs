@@ -20,6 +20,11 @@ namespace Yaw.Game
         void StartGame(StageData stage);
 
         /// <summary>
+        /// Inicia uma nova partida com os mesmos dados da última
+        /// </summary>
+        void RestartGame();
+
+        /// <summary>
         /// Finaliza a partida por algum motivo
         /// </summary>
         void EndGame(IGameOverReason reason);

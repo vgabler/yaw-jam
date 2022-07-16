@@ -13,7 +13,9 @@ namespace Yaw.Game
             cards = GetComponentsInChildren<CardUI>(true);
             //TODO reatividade
             controller.OnCardsUpdated += UpdateUI;
+            UpdateUI();
         }
+
         private void OnDestroy()
         {
             controller.OnCardsUpdated -= UpdateUI;

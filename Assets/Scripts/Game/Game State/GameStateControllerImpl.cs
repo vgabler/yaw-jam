@@ -46,6 +46,14 @@ namespace Yaw.Game
         }
 
         /// <summary>
+        /// Reinicia a mesma fase
+        /// </summary>
+        public void RestartGame()
+        {
+            StartGame(currentStageData);
+        }
+
+        /// <summary>
         /// Finaliza a partida
         /// </summary>
         public void EndGame(IGameOverReason reason)
