@@ -2,6 +2,8 @@ namespace Yaw.Game
 {
     public interface ITakesDamage : ITeamEntity
     {
+        /// Não pode ser atacado; por exempo, ao morrer
+        bool Invulnerable { get; }
         void TakeDamage(int damage, ITeamEntity attacker);
     }
     public interface IAttacker : ITeamEntity

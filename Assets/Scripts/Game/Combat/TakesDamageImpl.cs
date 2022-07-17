@@ -9,6 +9,10 @@ namespace Yaw.Game
     {
         [field: SerializeField]
         public int Team { get; set; }
+
+        [field: SerializeField]
+        public bool Invulnerable { get; set; }
+
         public bool allowFriendlyFire = false;
 
         public UnityEvent<int> OnTakeDamage;
