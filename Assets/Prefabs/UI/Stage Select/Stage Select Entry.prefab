@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &873103840405853331
 RectTransform:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10215378, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.24313726, g: 0.98039216, b: 0.6431373, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -306,15 +306,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2699855037058452868, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_Color.b
-      value: 0.41037738
+      value: 0.19607843
       objectReference: {fileID: 0}
     - target: {fileID: 2699855037058452868, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_Color.g
-      value: 0.41037738
+      value: 0.7254902
       objectReference: {fileID: 0}
     - target: {fileID: 2699855037058452868, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.98039216
       objectReference: {fileID: 0}
     - target: {fileID: 3615094720891268210, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

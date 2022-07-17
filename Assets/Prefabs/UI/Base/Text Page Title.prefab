@@ -12,6 +12,18 @@ PrefabInstance:
       value: Title
       objectReference: {fileID: 0}
     - target: {fileID: 270233935549893678, guid: f5551317ce087bb41b590d2ba4e9d40c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 270233935549893678, guid: f5551317ce087bb41b590d2ba4e9d40c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 270233935549893678, guid: f5551317ce087bb41b590d2ba4e9d40c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 270233935549893678, guid: f5551317ce087bb41b590d2ba4e9d40c, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 90
       objectReference: {fileID: 0}
@@ -89,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1156538608840225871, guid: f5551317ce087bb41b590d2ba4e9d40c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 1156538608840225871, guid: f5551317ce087bb41b590d2ba4e9d40c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

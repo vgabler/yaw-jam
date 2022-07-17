@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1278103731719791300, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_Name
-      value: Icon Button
+      value: Button Icon
       objectReference: {fileID: 0}
     - target: {fileID: 2699855037058452868, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_Type
@@ -21,15 +21,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 2a418d30032126142a1c02616807c788, type: 3}
     - target: {fileID: 2699855037058452868, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2699855037058452868, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2699855037058452868, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2699855037058452868, guid: f021513c947442a469a5d8b1bce5f77a, type: 3}
       propertyPath: m_PreserveAspect
