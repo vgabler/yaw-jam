@@ -1,5 +1,6 @@
 using UnityEngine;
 using Yaw.Data;
+using Yaw.Utils;
 
 namespace Yaw.Game
 {
@@ -9,6 +10,7 @@ namespace Yaw.Game
     /// </summary>
     public class SummonVisuals : MonoBehaviour
     {
+        public Color[] teamColors;
         public Transform body;
         ISingleDataProvider<SummonData> provider;
 
@@ -18,14 +20,17 @@ namespace Yaw.Game
             provider = GetComponentInParent<ISingleDataProvider<SummonData>>();
             var data = provider.Data;
 
-            //TODO reatividade; pode ser que altere o time?
             //Inverte a direção do personagem
             if (!data.IsFromLeft)
             {
-                var scale = body.localScale;
+                //TODO reatividade; pode ser que altere o time?
+                var scale = body.transform.localScale;
                 scale.x *= -1;
-                body.localScale = scale;
+                body.transform.localScale = scale;
             }
+
+            //Atribui a cor do time
+            GetComponent<SpriteRendererGroup>().SetColour(teamColors[data.Team]);
         }
     }
 }
