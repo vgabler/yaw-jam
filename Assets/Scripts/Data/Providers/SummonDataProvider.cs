@@ -33,7 +33,6 @@ namespace Yaw.Data
         /// </summary>
         public void DecreaseHealth(int damage)
         {
-            Debug.Log("Descreasing health by " + damage);
             var d = Data;
             d.Health -= damage;
             Set(d);

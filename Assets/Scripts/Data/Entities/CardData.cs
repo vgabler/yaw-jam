@@ -8,6 +8,7 @@ namespace Yaw.Data
         public SummonData SummonData { get; private set; }
         public string Name { get; private set; }
         public RuneDefinition[] Combination { get; private set; }
+        public int ScoreValue { get; private set; }
 
         /// <summary>
         /// Cria uma combinação de runas
@@ -16,6 +17,9 @@ namespace Yaw.Data
         {
             SummonData = definition.SummonData;
             Name = definition.name;
+
+            //A pontuação é equivalente à quantidade de runas
+            ScoreValue = definition.Runes.Count;
 
             //Sempre vão ser 6 slots
             Combination = new RuneDefinition[Constants.RUNE_SLOTS];

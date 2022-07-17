@@ -12,6 +12,7 @@ namespace Yaw.Game
         public Text healthText;
         public Text attackText;
         public Text nameText;
+        public Image avatar;
         public RuneCombinationUI combinationUI;
 
         /// <summary>
@@ -37,6 +38,11 @@ namespace Yaw.Game
             if (combinationUI != null)
             {
                 combinationUI.SetUp(data.Combination);
+            }
+
+            if (avatar != null)
+            {
+                avatar.sprite = data.SummonData.Avatar;
             }
         }
     }

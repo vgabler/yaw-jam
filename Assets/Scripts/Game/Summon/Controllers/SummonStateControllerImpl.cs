@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using Yaw.Data;
 
 namespace Yaw.Game
@@ -14,6 +15,8 @@ namespace Yaw.Game
         ISingleDataProvider<SummonData> dataProvider;
 
         bool waiting;
+
+        public UnityEvent OnDeath;
 
         private void Start()
         {
@@ -59,6 +62,7 @@ namespace Yaw.Game
             if (dataProvider.Data.Health <= 0)
             {
                 State = SummonState.Dying;
+                OnDeath?.Invoke();
             }
         }
 

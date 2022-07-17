@@ -41,7 +41,6 @@ namespace Yaw.Game
 
             //No começo, o timer é o de espera para iniciar
             timer = settings.StartDelay;
-            Debug.Log("AI - Starting");
         }
 
         private void Update()
@@ -68,7 +67,6 @@ namespace Yaw.Game
         /// </summary>
         void Act()
         {
-            Debug.Log("AI - adding runes");
             var card = deckController.ActiveCards[0];
 
             //Se a combinação for igual, passa para o summon
@@ -92,14 +90,12 @@ namespace Yaw.Game
             //Se já terminou a combinação, vai summonar
             if (allSet)
             {
-                Debug.Log("AI - summoning");
                 timer = settings.SummonDelay;
                 deckController.TrySummon(combination);
             }
             //Se não, vai para colocar outra runa
             else
             {
-                Debug.Log("AI - wait for another rune");
                 timer = settings.RunePlacementDelay;
             }
         }

@@ -9,6 +9,8 @@ namespace Yaw.Data
     {
         //TODO async. Melhor ainda, reactive
         List<T> GetAll();
+
+        public void Set(T value);
     }
 
     /// <summary>

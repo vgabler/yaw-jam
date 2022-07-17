@@ -23,7 +23,7 @@ namespace Yaw.Game
     /// </summary>
     public class GameStateIdle : GameState
     {
-        public GameStateIdle() : base(null) { }
+        public GameStateIdle() : base(default) { }
     }
 
     /// <summary>

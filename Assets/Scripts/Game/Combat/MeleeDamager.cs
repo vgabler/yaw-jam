@@ -37,7 +37,7 @@ namespace Yaw.Game
                 var td = target.transform.GetComponentInParent<ITakesDamage>();
 
                 //Se não tem componente "ITakesDamage", ignora
-                if (td == null)
+                if (td == null || td.Team == Team || td.Invulnerable)
                 {
                     continue;
                 }

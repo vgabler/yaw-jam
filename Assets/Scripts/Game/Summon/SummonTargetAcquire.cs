@@ -34,8 +34,8 @@ namespace Yaw.Game
                     {
                         var td = target.transform.GetComponentInParent<ITakesDamage>();
 
-                        //Se não tem componente "ITakesDamage", ou for do mesmo time, ignora
-                        if (td == null || td.Team == attacker.Team)
+                        //Se não tem componente "ITakesDamage", ou for do mesmo time, ou for invulneravel, ignora
+                        if (td == null || td.Team == attacker.Team || td.Invulnerable)
                         {
                             continue;
                         }
@@ -50,6 +50,11 @@ namespace Yaw.Game
 
         private void OnDrawGizmosSelected()
         {
+            if (rayCastOrigin == null || attacker == null)
+            {
+                return;
+            }
+
             Gizmos.color = Color.cyan;
             Gizmos.DrawLine(rayCastOrigin.position, (Vector2)rayCastOrigin.position + Direction * attacker.Range * .8f * Vector2.right);
         }

@@ -57,7 +57,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Body/Sprite/Shoulder L/Hand L
+    path: Body/Visual/Torso/Shoulder L/Hand L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -100,7 +100,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Body/Sprite/Shoulder R/Hand R
+    path: Body/Visual/Torso/Shoulder R/Hand R
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -190,7 +190,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Body/Sprite/Shoulder L/Hand L
+    path: Body/Visual/Torso/Shoulder L/Hand L
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -236,7 +236,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Body/Sprite/Shoulder L/Hand L
+    path: Body/Visual/Torso/Shoulder L/Hand L
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -282,7 +282,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Body/Sprite/Shoulder L/Hand L
+    path: Body/Visual/Torso/Shoulder L/Hand L
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -328,7 +328,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Body/Sprite/Shoulder R/Hand R
+    path: Body/Visual/Torso/Shoulder R/Hand R
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -374,7 +374,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Body/Sprite/Shoulder R/Hand R
+    path: Body/Visual/Torso/Shoulder R/Hand R
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -420,7 +420,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Body/Sprite/Shoulder R/Hand R
+    path: Body/Visual/Torso/Shoulder R/Hand R
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []
