@@ -2,14 +2,13 @@ using System.Collections;
 using UnityEngine;
 using Yaw.Data;
 using Yaw.Navigation;
-using Yaw.Storage;
 
 namespace Yaw.Game
 {
     public class GameStateControllerImpl : MonoBehaviour, IGameStateController
     {
         //Referência do Inspector
-        public float startDelay = 2;
+        public float startDelay = 3;
 
         //Dependências
         INavigationController navigationController;
