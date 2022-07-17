@@ -48,7 +48,9 @@ namespace Yaw.Utils
             {
                 sr.color = color;
             }
+#if UNITY_EDITOR
             lastColor = color;
+#endif
         }
     }
 }
