@@ -11,6 +11,7 @@ namespace Yaw.Game
     public class DeckController : MonoBehaviour
     {
         public event Action OnCardsUpdated;
+        public event Action<CardData> OnCardSummoned;
 
         public List<CardData> ActiveCards { get; private set; }
         public List<CardData> UsedCards { get; private set; }
@@ -76,6 +77,7 @@ namespace Yaw.Game
                 {
                     //Se a combinação estiver certa, faz o summon
                     summoner.Summon(card.SummonData);
+                    OnCardSummoned?.Invoke(card);
                     //Remove da pilha ativa
                     ActiveCards.RemoveAt(i);
                     //Adiciona na pilha de descarte

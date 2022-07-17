@@ -16,6 +16,7 @@ namespace Yaw.StageSelect
         public Button button;
         public GameObject lockedIndicator;
         public GameObject completedIndicator;
+        public Text best;
 
         StageData data;
 
@@ -26,6 +27,7 @@ namespace Yaw.StageSelect
             lockedIndicator.SetActive(data.Locked);
             label.text = $"{index + 1}";
             button.interactable = !data.Locked;
+            best.text = $"Best: {data.BestScore}";
         }
 
         public void Pick()

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Yaw.Data;
 using Yaw.Navigation;
+using Yaw.Storage;
 
 namespace Yaw.Game
 {
@@ -12,6 +13,8 @@ namespace Yaw.Game
 
         //Dependências
         INavigationController navigationController;
+        IDataProvider<StageData> stageDataProvider;
+        IScoreController scoreController;
 
         //Campos
         StageData currentStageData;
@@ -32,6 +35,8 @@ namespace Yaw.Game
         private void Start()
         {
             navigationController = ServiceLocator.Get<INavigationController>();
+            stageDataProvider = ServiceLocator.Get<IDataProvider<StageData>>();
+            scoreController = ServiceLocator.Get<IScoreController>();
         }
 
         /// <summary>
@@ -39,6 +44,7 @@ namespace Yaw.Game
         /// </summary>
         public void StartGame(StageData stage)
         {
+            scoreController.ResetScore();
             currentStageData = stage;
             State = new GameStateStarting(currentStageData);
             navigationController.ChangeScene("Game");
@@ -58,9 +64,16 @@ namespace Yaw.Game
         /// </summary>
         public void EndGame(IGameOverReason reason)
         {
+            //Salva os dados da fase;
             if (reason is GameOverReasonVictory victory)
             {
                 currentStageData.Completed = true;
+            }
+
+            //Se o score for melhor, altera
+            if (scoreController.Score > currentStageData.BestScore)
+            {
+                currentStageData.BestScore = scoreController.Score;
             }
 
             State = new GameStateEnded(currentStageData, reason);
@@ -69,9 +82,10 @@ namespace Yaw.Game
             if (reason is GameOverReasonForceQuit)
             {
                 navigationController.ChangeScene("Home");
+                return;
             }
 
-            //TODO salvar os resultados da partida
+            stageDataProvider.Set(currentStageData);
         }
 
         IEnumerator StartDelayRoutine(float duration)

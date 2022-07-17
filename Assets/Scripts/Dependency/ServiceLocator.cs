@@ -45,7 +45,7 @@ namespace Yaw
         {
             if (!Instance.services.ContainsKey(typeof(T)))
             {
-                throw new Exception("Serviço do tipo \"{typeof(T)}\" não foi registrado!");
+                throw new Exception($"Serviço do tipo \"{typeof(T)}\" não foi registrado!");
             }
 
             return Instance.services[typeof(T)] as T;
