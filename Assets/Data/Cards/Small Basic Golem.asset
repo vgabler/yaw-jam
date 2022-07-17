@@ -17,6 +17,7 @@ MonoBehaviour:
     Attack: 1
     Speed: 1
     Prefab: {fileID: 4409267568140852897, guid: 9e24ea1e14ed63141a6e140f23917746, type: 3}
+    Avatar: {fileID: -8987557684774062561, guid: 01e6f253371bbff42b5b9062d387434e, type: 3}
   Runes:
   - {fileID: 11400000, guid: b41cc1c3e0aba6e43b4b849e86adecc2, type: 2}
   - {fileID: 11400000, guid: 601b2f9286ece334d9f214262fdd1326, type: 2}

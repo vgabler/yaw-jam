@@ -16,5 +16,6 @@ namespace Yaw.Data
         public int Team;
         public bool IsFromLeft => Team % 2 == 0;
         public GameObject Prefab;
+        public Sprite Avatar;
     }
 }
