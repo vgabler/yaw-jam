@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6937225059018186674, guid: 67db3dbe4735e7a4598011663f4e5d79, type: 3}
       propertyPath: m_Name
-      value: Advanced Golem Medium (1)
+      value: Advanced Golem Small
       objectReference: {fileID: 0}
     - target: {fileID: 6937225059018186675, guid: 67db3dbe4735e7a4598011663f4e5d79, type: 3}
       propertyPath: m_RootOrder

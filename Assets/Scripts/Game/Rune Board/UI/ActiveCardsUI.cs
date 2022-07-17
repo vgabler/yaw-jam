@@ -24,6 +24,10 @@ namespace Yaw.Game
         void UpdateUI()
         {
             var activeCards = controller.ActiveCards;
+            if (activeCards == null)
+            {
+                return;
+            }
             //Atualiza o UI
             for (int i = 0; i < cards.Length; i++)
             {
