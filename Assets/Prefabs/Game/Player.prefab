@@ -1600,7 +1600,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
-  prefab: {fileID: 173558136622029380, guid: 0a6e9b06f6fc4fe4383cf4db75fa945d, type: 3}
   summonLocation: {fileID: 4003484868930147051}
   summonsParent: {fileID: 1221243340168131532}
 --- !u!114 &2141089182142413062
@@ -1616,6 +1615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Team>k__BackingField: 0
+  <Invulnerable>k__BackingField: 0
   allowFriendlyFire: 0
   OnTakeDamage:
     m_PersistentCalls:
@@ -1728,7 +1728,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0.90524197, b: 0.6367924, a: 1}
+  m_Color: {r: 0.98039216, g: 0.8714178, b: 0.64705884, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
